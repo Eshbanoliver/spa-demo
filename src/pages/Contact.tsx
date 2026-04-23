@@ -81,7 +81,7 @@ const Contact = () => {
               
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                <textarea id="message" rows={5} placeholder="How can we help you?" required></textarea>
               </div>
               
               <button type="submit" className="btn btn-primary w-100">Send Message</button>
@@ -94,7 +94,7 @@ const Contact = () => {
         <div className="map-container glass-panel">
           {/* Placeholder for map iframe */}
           <div className="map-placeholder">
-            <FiMapPin size={48} color="var(--accent)" />
+            <FiMapPin style={{ fontSize: '48px', color: 'var(--accent)' }} />
             <p>Interactive Map Integration Here</p>
             <span>Udaipur, Rajasthan 313001</span>
           </div>
