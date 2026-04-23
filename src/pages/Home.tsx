@@ -1,25 +1,59 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiCheckCircle, FiHeart, FiStar } from 'react-icons/fi';
 import '../styles/Home.css';
 
+const words = ["Soul", "Mind", "Body", "Aura"];
+
 const Home = () => {
+  const [currentWord, setCurrentWord] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWord((prev) => (prev + 1) % words.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="home-page">
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="hero-badge glass-panel"
+          >
+            <span className="sparkle">✨</span> Premium Wellness Oasis
+          </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }} 
             animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
           >
-            Awaken Your Senses, <br/>Restore Your Soul
+            Awaken Your Senses, <br/>Restore Your <br/>
+            <span className="dynamic-text-wrapper">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={currentWord}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                  className="dynamic-text"
+                >
+                  {words[currentWord]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 30 }} 
             animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
             Experience the ultimate journey of relaxation with our premium spa therapies designed to rejuvenate your mind, body, and spirit in Udaipur.
           </motion.p>
@@ -27,20 +61,47 @@ const Home = () => {
             className="hero-buttons"
             initial={{ opacity: 0, y: 30 }} 
             animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
           >
             <Link to="/contact" className="btn btn-primary">Book an Appointment</Link>
             <Link to="/services" className="btn btn-glass">Explore Services</Link>
           </motion.div>
         </div>
+        
         <div className="hero-image-container">
+          <div className="hero-image-glow"></div>
           <motion.div 
-            className="hero-image glass-panel"
-            initial={{ opacity: 0, scale: 0.9 }} 
-            animate={{ opacity: 1, scale: 1 }} 
-            transition={{ duration: 1 }}
+            className="hero-image-wrapper"
+            initial={{ opacity: 0, scale: 0.8, rotate: -5 }} 
+            animate={{ opacity: 1, scale: 1, rotate: 0 }} 
+            transition={{ duration: 1.2, type: "spring", bounce: 0.4 }}
           >
-            {/* The image will be loaded via CSS background to allow liquid shape masking or just a standard tag */}
+            <div className="hero-image liquid-mask"></div>
+            
+            {/* Floating Badges */}
+            <motion.div 
+              className="floating-badge badge-1 glass-panel"
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div className="badge-icon">🌿</div>
+              <div className="badge-text">
+                <strong>100% Organic</strong>
+                <span>Premium Products</span>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="floating-badge badge-2 glass-panel"
+              animate={{ y: [0, 15, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            >
+              <div className="badge-icon">⭐</div>
+              <div className="badge-text">
+                <strong>5.0 Rating</strong>
+                <span>From 5k+ Clients</span>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
