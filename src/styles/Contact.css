@@ -1,0 +1,138 @@
+/* Contact Page Styles */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+}
+
+.contact-info {
+  padding: 3rem;
+}
+
+.contact-info h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-desc {
+  color: var(--text-light);
+  margin-bottom: 3rem;
+}
+
+.info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.info-item h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-body);
+}
+
+.info-item p {
+  color: var(--text-light);
+}
+
+.contact-form-wrapper {
+  padding: 3rem;
+}
+
+.contact-form-wrapper h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0 3px rgba(45, 74, 62, 0.1);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.map-section {
+  margin-bottom: 4rem;
+}
+
+.map-container {
+  height: 400px;
+  padding: 1rem;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  background: rgba(45, 74, 62, 0.05);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--text-light);
+}
+
+.map-placeholder p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

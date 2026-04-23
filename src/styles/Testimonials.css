@@ -1,0 +1,47 @@
+/* Testimonials Page Styles */
+
+.testi-grid-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.testi-card-main {
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease;
+}
+
+.testi-card-main:hover {
+  transform: translateY(-5px);
+}
+
+.stars-main {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.review-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.reviewer-name {
+  font-size: 1.2rem;
+  color: var(--primary);
+  border-top: 1px solid var(--glass-border);
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .testi-grid-main {
+    grid-template-columns: 1fr;
+  }
+}
