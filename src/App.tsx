@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
+import BackgroundSpaDesigns from './components/BackgroundSpaDesigns';
 
 // Pages
 import Home from './pages/Home';
@@ -13,6 +14,7 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <div className="app-container">
+      <BackgroundSpaDesigns />
       <div className="background-shapes">
         <div className="shape shape-1"></div>
         <div className="shape shape-2"></div>
