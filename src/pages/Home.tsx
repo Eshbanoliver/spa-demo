@@ -268,6 +268,8 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
+              <div className="corner-accent corner-tl"></div>
+              <div className="corner-accent corner-br"></div>
               <div className="value-icon">{value.icon}</div>
               <div className="value-bg-graphic">
                 {value.icon}
