@@ -250,18 +250,29 @@ const Home = () => {
           <h2 className="section-title">Our Core Values</h2>
         </div>
         <div className="values-grid">
-          <div className="value-item">
-            <h4>Purity</h4>
-            <p>We use only the finest natural ingredients.</p>
-          </div>
-          <div className="value-item">
-            <h4>Tranquility</h4>
-            <p>Creating a peaceful environment for deep relaxation.</p>
-          </div>
-          <div className="value-item">
-            <h4>Excellence</h4>
-            <p>Delivering premium service in every detail.</p>
-          </div>
+          {[
+            { title: 'Purity', desc: 'We use only the finest natural and organic ingredients.' },
+            { title: 'Tranquility', desc: 'Creating a peaceful environment for deep relaxation.' },
+            { title: 'Excellence', desc: 'Delivering premium service in every small detail.' },
+            { title: 'Integrity', desc: 'Honest and transparent service in everything we do.' },
+            { title: 'Innovation', desc: 'Constantly evolving with modern wellness science.' },
+            { title: 'Sustainability', desc: 'Eco-friendly products and sustainable spa practices.' },
+            { title: 'Empowerment', desc: 'Helping you take charge of your physical wellness.' },
+            { title: 'Connection', desc: 'Building meaningful relationships with our guests.' }
+          ].map((value, index) => (
+            <motion.div 
+              className="value-item glass-panel" 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <div className="value-number">{index + 1}</div>
+              <h4>{value.title}</h4>
+              <p>{value.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
