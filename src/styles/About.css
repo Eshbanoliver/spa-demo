@@ -19,9 +19,29 @@
 
 .story-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 8rem;
   align-items: center;
+  position: relative;
+}
+
+.story-content {
+  position: relative;
+  z-index: 2;
+}
+
+.story-bg-text {
+  position: absolute;
+  top: -50px;
+  left: -20px;
+  font-size: 10rem;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  color: var(--primary);
+  opacity: 0.03;
+  pointer-events: none;
+  white-space: nowrap;
+  line-height: 1;
 }
 
 .story-content p {
@@ -43,14 +63,68 @@
   gap: 1rem;
   font-size: 1.1rem;
   color: var(--text-dark);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  transition: var(--transition);
+  cursor: default;
 }
 
-.story-image {
-  height: 600px;
-  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/02f622b6-3a62-4265-bddb-1546d05e5721/about_spa_interior_1776919672877.png');
+.story-highlights li:hover {
+  background: var(--glass-bg);
+  transform: translateX(10px);
+  box-shadow: var(--glass-shadow);
+}
+
+.check-icon {
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.story-visuals {
+  position: relative;
+  height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-image-main {
+  width: 85%;
+  height: 85%;
+  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/615b89dd-8ff9-45d3-b55d-3d29924b0c91/luxury_spa_story_main_1777006283918.png');
   background-size: cover;
   background-position: center;
   border-radius: 40px;
+  box-shadow: var(--glass-shadow);
+  z-index: 1;
+  position: relative;
+}
+
+.story-image-sub {
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  width: 50%;
+  height: 40%;
+  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/615b89dd-8ff9-45d3-b55d-3d29924b0c91/luxury_spa_story_detail_1777006303603.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  border: 8px solid var(--bg-color);
+  box-shadow: var(--glass-shadow);
+  z-index: 2;
+}
+
+.story-accent-shape {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: 0;
 }
 
 .philosophy-section {
@@ -70,9 +144,17 @@
 @media (max-width: 992px) {
   .story-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 4rem;
   }
-  .story-image {
-    height: 400px;
+  .story-visuals {
+    height: 500px;
+    margin-top: 2rem;
+  }
+  .story-bg-text {
+    font-size: 6rem;
+    top: -30px;
+  }
+  .story-image-sub {
+    left: 0;
   }
 }

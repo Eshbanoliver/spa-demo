@@ -195,9 +195,10 @@
 .about-img {
   height: 500px;
   border-radius: 30px;
-  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/02f622b6-3a62-4265-bddb-1546d05e5721/about_spa_interior_1776919672877.png');
+  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/615b89dd-8ff9-45d3-b55d-3d29924b0c91/luxury_spa_story_main_1777006283918.png');
   background-size: cover;
   background-position: center;
+  box-shadow: var(--glass-shadow);
 }
 
 .about-text h2 {

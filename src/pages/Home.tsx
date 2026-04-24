@@ -109,13 +109,25 @@ const Home = () => {
       {/* About Preview */}
       <section className="about-preview page-container">
         <div className="about-grid">
-          <div className="about-img glass-panel"></div>
-          <div className="about-text">
+          <motion.div 
+            className="about-img glass-panel"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          ></motion.div>
+          <motion.div 
+            className="about-text"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <span className="section-subtitle">Our Story</span>
             <h2 className="section-title">A Sanctuary of Peace in the City</h2>
             <p>Step into a world where time stands still. At Spa, we blend ancient healing traditions with modern luxury to offer you an escape from the everyday hustle. Our expert therapists are dedicated to providing personalized care that caters to your unique needs.</p>
             <Link to="/about" className="btn btn-outline">Read More About Us</Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
