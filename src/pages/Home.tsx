@@ -250,15 +250,16 @@ const Home = () => {
           <h2 className="section-title">Our Core Values</h2>
         </div>
         <div className="values-grid">
+          {/* Expanded 4x2 Grid of Core Values */}
           {[
-            { title: 'Purity', desc: 'We use only the finest natural and organic ingredients.' },
-            { title: 'Tranquility', desc: 'Creating a peaceful environment for deep relaxation.' },
-            { title: 'Excellence', desc: 'Delivering premium service in every small detail.' },
-            { title: 'Integrity', desc: 'Honest and transparent service in everything we do.' },
-            { title: 'Innovation', desc: 'Constantly evolving with modern wellness science.' },
-            { title: 'Sustainability', desc: 'Eco-friendly products and sustainable spa practices.' },
-            { title: 'Empowerment', desc: 'Helping you take charge of your physical wellness.' },
-            { title: 'Connection', desc: 'Building meaningful relationships with our guests.' }
+            { title: 'Purity', desc: 'We use only the finest natural and organic ingredients.', iconPath: 'M12,2C12,2 4,10 4,15C4,19.42 7.58,23 12,23C16.42,23 20,19.42 20,15C20,10 12,2 12,2Z' },
+            { title: 'Tranquility', desc: 'Creating a peaceful environment for deep relaxation.', iconPath: 'M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8.13,20C11.08,20 12.4,18.33 14.33,16.5C15.57,15.3 16.71,14.22 18.88,14C18.43,15.14 18.31,16.32 18.66,17.41L20.5,16.82C20.25,16.03 20.25,15.22 20.5,14.45C21.06,14.58 21.5,15.03 21.65,15.59L23.5,15C23.05,13.27 21.66,12.03 20,11.82C20,9.75 18.78,8.15 17,8M12.5,13C11.47,13 10.5,13.5 10.5,14.5C10.5,15.5 11.47,16 12.5,16C13.53,16 14.5,15.5 14.5,14.5C14.5,13.5 13.53,13 12.5,13Z' },
+            { title: 'Excellence', desc: 'Delivering premium service in every small detail.', iconPath: 'M12,1L9,9L1,9L7,14L5,22L12,17L19,22L17,14L23,9L15,9L12,1Z' },
+            { title: 'Integrity', desc: 'Honest and transparent service in everything we do.', iconPath: 'M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z' },
+            { title: 'Innovation', desc: 'Constantly evolving with modern wellness science.', iconPath: 'M13,2.05C18.05,2.55 22,6.82 22,12C22,17.18 18.05,21.45 13,21.95V24L11,24V21.95C5.95,21.45 2,17.18 2,12C2,6.82 5.95,2.55 11,2.05V0L13,0V2.05Z' },
+            { title: 'Sustainability', desc: 'Eco-friendly products and sustainable spa practices.', iconPath: 'M12,2L4.5,20.29L5.21,21L12,18L18.79,21L19.5,20.29L12,2Z' },
+            { title: 'Empowerment', desc: 'Helping you take charge of your physical wellness.', iconPath: 'M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.41,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.59,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z' },
+            { title: 'Connection', desc: 'Building meaningful relationships with our guests.', iconPath: 'M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15.22 17,16.5V19H22V16.5C22,14.48 18.85,13.25 16,13M8,13C5.15,13 2,14.48 2,16.5V19H14V16.5C14,14.48 10.85,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z' }
           ].map((value, index) => (
             <motion.div 
               className="value-item glass-panel" 
@@ -268,6 +269,11 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
+              <div className="value-bg-graphic">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d={value.iconPath} />
+                </svg>
+              </div>
               <div className="value-number">{index + 1}</div>
               <h4>{value.title}</h4>
               <p>{value.desc}</p>

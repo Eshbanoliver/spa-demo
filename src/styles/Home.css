@@ -435,6 +435,26 @@
   color: white;
 }
 
+.value-bg-graphic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  color: var(--primary);
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+  transition: var(--transition);
+}
+
+.value-item:hover .value-bg-graphic {
+  opacity: 0.1;
+  transform: translate(-50%, -50%) scale(1.2) rotate(15deg);
+  color: white;
+}
+
 .value-number {
   position: absolute;
   top: 15px;
