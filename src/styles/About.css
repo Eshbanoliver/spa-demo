@@ -91,7 +91,7 @@
 .story-image-main {
   width: 85%;
   height: 85%;
-  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/615b89dd-8ff9-45d3-b55d-3d29924b0c91/luxury_spa_story_main_1777006283918.png');
+  background-image: url('/images/story_main.png');
   background-size: cover;
   background-position: center;
   border-radius: 40px;
@@ -106,7 +106,7 @@
   left: -10%;
   width: 50%;
   height: 40%;
-  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/615b89dd-8ff9-45d3-b55d-3d29924b0c91/luxury_spa_story_detail_1777006303603.png');
+  background-image: url('/images/story_detail.png');
   background-size: cover;
   background-position: center;
   border-radius: 24px;

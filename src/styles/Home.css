@@ -195,7 +195,7 @@
 .about-img {
   height: 500px;
   border-radius: 30px;
-  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/615b89dd-8ff9-45d3-b55d-3d29924b0c91/luxury_spa_story_main_1777006283918.png');
+  background-image: url('/images/story_main.png');
   background-size: cover;
   background-position: center;
   box-shadow: var(--glass-shadow);
@@ -375,11 +375,11 @@
 }
 
 .mission-card .mv-bg {
-  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/615b89dd-8ff9-45d3-b55d-3d29924b0c91/spa_mission_bg_1777006879855.png');
+  background-image: url('/images/mission_bg.png');
 }
 
 .vision-card .mv-bg {
-  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/615b89dd-8ff9-45d3-b55d-3d29924b0c91/spa_vision_bg_1777006899624.png');
+  background-image: url('/images/vision_bg.png');
 }
 
 .mv-overlay {
