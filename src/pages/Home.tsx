@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiCheckCircle, FiHeart, FiStar, FiDroplet, FiAward, FiShield, FiZap, FiLeaf, FiUsers, FiLink, FiMoon } from 'react-icons/fi';
+import { FiCheckCircle, FiHeart, FiStar, FiDroplet, FiAward, FiShield, FiZap, FiWind, FiUsers, FiLink, FiMoon } from 'react-icons/fi';
 import '../styles/Home.css';
 
 const words = ["Soul", "Mind", "Body", "Aura"];
@@ -168,6 +168,8 @@ const Home = () => {
 
       {/* Services Preview */}
       <section className="services-preview">
+        <div className="floating-design fd-1"></div>
+        <div className="floating-design fd-2"></div>
         <div className="section-header">
           <motion.span 
             className="section-subtitle"
@@ -198,6 +200,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 + index * 0.15, duration: 0.6 }}
             >
+              <div className="card-design-layer"></div>
               <div className="service-icon">{service.icon}</div>
               <h3>{service.title}</h3>
               <p>Relieve tension and soothe your muscles with our signature treatments.</p>
@@ -245,6 +248,8 @@ const Home = () => {
 
       {/* Core Values */}
       <section className="core-values page-container">
+        <div className="floating-design fd-3"></div>
+        <div className="floating-design fd-4"></div>
         <div className="values-bg-blob"></div>
         <div className="section-header">
           <span className="section-subtitle">What Guides Us</span>
@@ -258,7 +263,7 @@ const Home = () => {
             { title: 'Excellence', desc: 'Delivering premium service in every small detail.', icon: <FiAward /> },
             { title: 'Integrity', desc: 'Honest and transparent service in everything we do.', icon: <FiShield /> },
             { title: 'Innovation', desc: 'Constantly evolving with modern wellness science.', icon: <FiZap /> },
-            { title: 'Sustainability', desc: 'Eco-friendly products and sustainable spa practices.', icon: <FiLeaf /> }
+            { title: 'Sustainability', desc: 'Eco-friendly products and sustainable spa practices.', icon: <FiWind /> }
           ].map((value, index) => (
             <motion.div 
               className="value-item glass-panel" 
@@ -268,6 +273,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
+              <div className="card-design-layer"></div>
               <div className="corner-accent corner-tl"></div>
               <div className="corner-accent corner-br"></div>
               <div className="value-icon">{value.icon}</div>

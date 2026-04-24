@@ -467,6 +467,53 @@
   box-shadow: 0 10px 30px rgba(45, 74, 62, 0.03);
 }
 
+.floating-design {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 C60 20 80 20 100 20 C80 20 80 40 80 50 C80 60 80 80 100 80 C80 80 60 80 50 100 C40 80 20 80 0 80 C20 80 20 60 20 50 C20 40 20 20 0 20 C20 20 40 20 50 0' fill='%23c5a059' fill-opacity='0.1'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+  animation: float-slow 20s infinite alternate ease-in-out;
+}
+
+.fd-1 { top: -100px; right: -100px; transform: rotate(15deg); }
+.fd-2 { bottom: -100px; left: -100px; transform: rotate(-15deg); opacity: 0.5; }
+.fd-3 { top: 20%; left: -150px; transform: rotate(45deg); width: 500px; height: 500px; }
+.fd-4 { bottom: 10%; right: -150px; transform: rotate(-20deg); width: 450px; height: 450px; opacity: 0.7; }
+
+@keyframes float-slow {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(30px, 40px) rotate(10deg); }
+}
+
+.card-design-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url('/images/card_pattern.png');
+  background-size: 200px;
+  background-position: center;
+  transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.service-card:hover .card-design-layer,
+.value-item:hover .card-design-layer {
+  opacity: 0.4;
+  transform: scale(1.2) rotate(10deg);
+  filter: brightness(1.2);
+}
+
+.value-item {
+  background: linear-gradient(135deg, #ffffff 0%, #f9f7f4 100%);
+  border: 1px solid var(--accent-light);
+  box-shadow: var(--glass-shadow);
+}
+
 /* Background Design: Dot Pattern */
 .value-item::before {
   content: '';
