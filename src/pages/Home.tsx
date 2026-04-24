@@ -131,9 +131,22 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Key Metrics */}
       <section className="metrics-section">
         <div className="metrics-container glass-panel">
+          {/* Background Designs */}
+          <div className="metrics-bg-design design-left">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor">
+              <path d="M10 90 C 5 40, 40 5, 90 10 C 40 20, 20 40, 10 90 Z" opacity="0.1" />
+              <path d="M10 90 C 40 80, 80 60, 90 10" opacity="0.05" />
+            </svg>
+          </div>
+          <div className="metrics-bg-design design-right">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor">
+              <circle cx="50" cy="50" r="30" opacity="0.05" />
+              <circle cx="50" cy="50" r="40" strokeDasharray="2 4" opacity="0.1" />
+            </svg>
+          </div>
+
           <div className="metric">
             <h3>5k+</h3>
             <p>Happy Clients</p>

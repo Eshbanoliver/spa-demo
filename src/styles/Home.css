@@ -222,10 +222,35 @@
   justify-content: space-around;
   padding: 3rem;
   border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.metrics-bg-design {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  color: var(--primary);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.design-left {
+  top: -50px;
+  left: -50px;
+  transform: rotate(-15deg);
+}
+
+.design-right {
+  bottom: -50px;
+  right: -50px;
+  transform: rotate(15deg);
 }
 
 .metric {
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .metric h3 {
