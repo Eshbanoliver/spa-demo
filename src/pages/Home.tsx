@@ -245,6 +245,7 @@ const Home = () => {
 
       {/* Core Values */}
       <section className="core-values page-container">
+        <div className="values-bg-blob"></div>
         <div className="section-header">
           <span className="section-subtitle">What Guides Us</span>
           <h2 className="section-title">Our Core Values</h2>
@@ -257,9 +258,7 @@ const Home = () => {
             { title: 'Excellence', desc: 'Delivering premium service in every small detail.', icon: <FiAward /> },
             { title: 'Integrity', desc: 'Honest and transparent service in everything we do.', icon: <FiShield /> },
             { title: 'Innovation', desc: 'Constantly evolving with modern wellness science.', icon: <FiZap /> },
-            { title: 'Sustainability', desc: 'Eco-friendly products and sustainable spa practices.', icon: <FiLeaf /> },
-            { title: 'Empowerment', desc: 'Helping you take charge of your physical wellness.', icon: <FiUsers /> },
-            { title: 'Connection', desc: 'Building meaningful relationships with our guests.', icon: <FiLink /> }
+            { title: 'Sustainability', desc: 'Eco-friendly products and sustainable spa practices.', icon: <FiLeaf /> }
           ].map((value, index) => (
             <motion.div 
               className="value-item glass-panel" 
