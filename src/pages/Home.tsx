@@ -212,14 +212,34 @@ const Home = () => {
       {/* Mission & Vision */}
       <section className="mission-vision page-container">
         <div className="mv-grid">
-          <div className="mv-card glass-panel">
-            <h3>Our Mission</h3>
-            <p>To provide an unparalleled wellness experience that nurtures the body, mind, and spirit through holistic therapies and exceptional service.</p>
-          </div>
-          <div className="mv-card glass-panel">
-            <h3>Our Vision</h3>
-            <p>To be the premier destination for luxury wellness in Udaipur, recognized for our commitment to holistic health and customer satisfaction.</p>
-          </div>
+          <motion.div 
+            className="mv-card mission-card"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="mv-bg"></div>
+            <div className="mv-overlay"></div>
+            <div className="mv-content">
+              <h3>Our Mission</h3>
+              <p>To provide an unparalleled wellness experience that nurtures the body, mind, and spirit through holistic therapies and exceptional service.</p>
+            </div>
+          </motion.div>
+          <motion.div 
+            className="mv-card vision-card"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="mv-bg"></div>
+            <div className="mv-overlay"></div>
+            <div className="mv-content">
+              <h3>Our Vision</h3>
+              <p>To be the premier destination for luxury wellness in Udaipur, recognized for our commitment to holistic health and customer satisfaction.</p>
+            </div>
+          </motion.div>
         </div>
       </section>
 

@@ -342,16 +342,71 @@
 .mv-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 3rem;
+  margin: 4rem 0;
 }
 
 .mv-card {
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 3rem;
+  border: none;
+  color: white;
+}
+
+.mv-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 1s cubic-bezier(0.2, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.mv-card:hover .mv-bg {
+  transform: scale(1.1);
+}
+
+.mission-card .mv-bg {
+  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/615b89dd-8ff9-45d3-b55d-3d29924b0c91/spa_mission_bg_1777006879855.png');
+}
+
+.vision-card .mv-bg {
+  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/615b89dd-8ff9-45d3-b55d-3d29924b0c91/spa_vision_bg_1777006899624.png');
+}
+
+.mv-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(45, 74, 62, 0.4), rgba(45, 74, 62, 0.8));
+  backdrop-filter: blur(2px);
+  z-index: 0;
+}
+
+.mv-content {
+  position: relative;
+  z-index: 1;
 }
 
 .mv-card h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-family: var(--font-heading);
+}
+
+.mv-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 400px;
 }
 
 /* Core Values */
