@@ -167,10 +167,21 @@ const Home = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="services-preview page-container">
+      <section className="services-preview">
         <div className="section-header">
-          <span className="section-subtitle">Our Offerings</span>
-          <h2 className="section-title">Premium Spa Services</h2>
+          <motion.span 
+            className="section-subtitle"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >Our Offerings</motion.span>
+          <motion.h2 
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >Premium Spa Services</motion.h2>
         </div>
         <div className="services-grid">
           {[
@@ -178,11 +189,19 @@ const Home = () => {
             { title: 'Aromatherapy', icon: <FiCheckCircle /> },
             { title: 'Facial Treatments', icon: <FiStar /> },
           ].map((service, index) => (
-            <div className="service-card glass-panel" key={index}>
+            <motion.div 
+              className="service-card" 
+              key={index}
+              data-index={`0${index + 1}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 + index * 0.15, duration: 0.6 }}
+            >
               <div className="service-icon">{service.icon}</div>
               <h3>{service.title}</h3>
               <p>Relieve tension and soothe your muscles with our signature treatments.</p>
-            </div>
+            </motion.div>
           ))}
         </div>
         <div className="text-center mt-4" style={{ textAlign: 'center', marginTop: '3rem' }}>
