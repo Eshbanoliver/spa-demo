@@ -290,14 +290,54 @@ const Home = () => {
 
       {/* Why Choose Us */}
       <section className="why-choose-us page-container">
-        <div className="wcu-content glass-panel">
-          <h2>Why Choose Spa?</h2>
-          <ul>
-            <li><FiCheckCircle className="check-icon" /> Certified and experienced therapists</li>
-            <li><FiCheckCircle className="check-icon" /> Premium organic products</li>
-            <li><FiCheckCircle className="check-icon" /> Clean, hygienic, and luxurious environment</li>
-            <li><FiCheckCircle className="check-icon" /> Customized treatments tailored to you</li>
-          </ul>
+        <div className="wcu-grid">
+          <motion.div 
+            className="wcu-image-side"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <div className="wcu-main-img" style={{ backgroundImage: "url('/images/wcu_main.png')" }}></div>
+            <div className="wcu-accent-box">
+              <h3>10+</h3>
+              <p>Years of Excellence</p>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            className="wcu-content-side"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <span className="section-subtitle">Excellence Guaranteed</span>
+            <h2 className="section-title">Why Choose Our Sanctuary?</h2>
+            <div className="wcu-features">
+              {[
+                { title: 'Expert Therapists', desc: 'Certified professionals with years of experience in holistic healing.', icon: '💆‍♀️' },
+                { title: 'Organic Products', desc: 'We use only the purest 100% organic and sustainable oils and creams.', icon: '🌿' },
+                { title: 'Luxury Ambiance', desc: 'Every room is designed to provide a deep sense of peace and privacy.', icon: '✨' },
+                { title: 'Tailored Care', desc: 'Treatments customized specifically for your physical and mental needs.', icon: <FiCheckCircle /> }
+              ].map((feature, index) => (
+                <motion.div 
+                  className="wcu-feature-item" 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + index * 0.1 }}
+                >
+                  <div className="feature-icon-circle">{feature.icon}</div>
+                  <div className="feature-text">
+                    <h4>{feature.title}</h4>
+                    <p>{feature.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
