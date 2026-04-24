@@ -435,18 +435,34 @@
   color: white;
 }
 
+.value-icon {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.value-item:hover .value-icon {
+  color: white;
+  transform: scale(1.1);
+}
+
 .value-bg-graphic {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
+  font-size: 8rem;
   color: var(--primary);
   opacity: 0.05;
   pointer-events: none;
   z-index: 0;
   transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .value-item:hover .value-bg-graphic {
