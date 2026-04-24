@@ -127,10 +127,60 @@
   z-index: 0;
 }
 
+.story-petal {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.petal-1 {
+  top: 5%;
+  right: 15%;
+}
+
+.petal-2 {
+  bottom: 10%;
+  left: 20%;
+}
+
 .philosophy-section {
   margin: 4rem 5%;
-  padding: 4rem 0;
+  padding: 6rem 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-bg-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.decor-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.2;
+}
+
+.decor-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--accent);
+  top: -150px;
+  left: -150px;
+}
+
+.decor-2 {
+  width: 250px;
+  height: 250px;
+  background: var(--primary-light);
+  bottom: -125px;
+  right: -125px;
 }
 
 .philosophy-text {
