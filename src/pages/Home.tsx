@@ -427,14 +427,26 @@ const Home = () => {
           <h2 className="section-title">Frequently Asked Questions</h2>
         </div>
         <div className="faq-list">
-          <div className="faq-item glass-panel">
-            <h3>Do I need to book in advance?</h3>
-            <p>Yes, we highly recommend booking in advance to secure your preferred time and therapist.</p>
-          </div>
-          <div className="faq-item glass-panel">
-            <h3>What should I wear?</h3>
-            <p>Wear comfortable clothing. We provide robes, slippers, and disposable undergarments for your treatments.</p>
-          </div>
+          {[
+            { q: "Do I need to book in advance?", a: "Yes, we highly recommend booking in advance to secure your preferred time and therapist." },
+            { q: "What should I wear?", a: "Wear comfortable clothing. We provide robes, slippers, and disposable undergarments for your treatments." },
+            { q: "What is your cancellation policy?", a: "We require at least 24 hours notice for cancellations to avoid a 50% service charge." },
+            { q: "Are gift vouchers available?", a: "Yes, we offer elegant gift vouchers for any treatment or amount, perfect for your loved ones." },
+            { q: "Do you offer group bookings?", a: "Absolutely! We cater to bridal parties, corporate events, and group spa days. Contact us for custom packages." },
+            { q: "Is there a minimum age?", a: "Our services are available for guests aged 16+. Younger guests require parental consent for select treatments." }
+          ].map((item, index) => (
+            <motion.div 
+              className="faq-item glass-panel" 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
