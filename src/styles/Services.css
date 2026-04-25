@@ -19,7 +19,7 @@
 
 .service-img-placeholder {
   height: 250px;
-  background-image: url('C:/Users/The Eshban Oliver/.gemini/antigravity/brain/02f622b6-3a62-4265-bddb-1546d05e5721/spa_service_assets_1776919690351.png');
+  background-image: url('/images/service_generic.png');
   background-size: cover;
   background-position: center;
   border-bottom: 1px solid var(--glass-border);
