@@ -199,6 +199,22 @@
   background-size: cover;
   background-position: center;
   box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: visible !important;
+}
+
+.about-img-accent {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  border: 4px solid white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  z-index: 2;
 }
 
 .about-text h2 {
@@ -208,6 +224,9 @@
 .about-text p {
   margin-bottom: 2rem;
   color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 500px;
 }
 
 /* Metrics */

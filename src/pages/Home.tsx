@@ -115,7 +115,14 @@ const Home = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-          ></motion.div>
+          >
+            <motion.div 
+              className="about-img-accent"
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              style={{ backgroundImage: "url('/images/story_detail.png')" }}
+            ></motion.div>
+          </motion.div>
           <motion.div 
             className="about-text"
             initial={{ opacity: 0, x: 30 }}
