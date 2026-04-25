@@ -94,7 +94,9 @@ const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-            ></motion.div>
+            >
+              <img src="/images/story_main_v2.png" alt="Our Story" className="main-story-img" />
+            </motion.div>
             <motion.div 
               className="story-image-sub"
               initial={{ opacity: 0, x: 20, y: 20 }}

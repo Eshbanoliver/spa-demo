@@ -116,6 +116,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            <img src="/images/story_main_v2.png" alt="Our Story" className="main-story-img" />
             <motion.div 
               className="about-img-accent"
               animate={{ y: [0, -20, 0] }}
