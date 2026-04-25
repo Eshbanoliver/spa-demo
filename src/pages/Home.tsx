@@ -351,10 +351,29 @@ const Home = () => {
 
       {/* Call to Action */}
       <section className="cta-section">
-        <div className="cta-container glass-panel">
-          <h2>Ready to Begin Your Journey?</h2>
-          <p>Book your session today and step into a world of ultimate relaxation.</p>
-          <Link to="/contact" className="btn btn-primary">Book Now</Link>
+        <div className="cta-container">
+          <div className="cta-bg-image" style={{ backgroundImage: "url('/images/cta_bg.png')" }}></div>
+          <div className="cta-overlay"></div>
+          <div className="cta-content">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="cta-subtitle">Limited Appointments Available</span>
+              <h2>Ready to Begin Your Journey?</h2>
+              <p>Book your session today and step into a world of ultimate relaxation and rejuvenation.</p>
+              <div className="cta-buttons">
+                <Link to="/contact" className="btn btn-primary">Book Now</Link>
+                <Link to="/services" className="btn btn-glass">Our Services</Link>
+              </div>
+            </motion.div>
+          </div>
+          
+          {/* Decorative elements */}
+          <div className="cta-decor decor-1">✨</div>
+          <div className="cta-decor decor-2">🌿</div>
         </div>
       </section>
 

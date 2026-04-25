@@ -781,24 +781,112 @@
 
 /* CTA Section */
 .cta-section {
-  padding: 4rem 5%;
+  padding: 6rem 5%;
 }
 
 .cta-container {
-  padding: 5rem 3rem;
+  min-height: 450px;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background: var(--glass-dark-bg);
-  color: white;
+  box-shadow: 0 30px 60px rgba(45, 74, 62, 0.2);
 }
 
-.cta-container h2 {
-  color: white;
-  margin-bottom: 1rem;
+.cta-bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 10s ease;
+  z-index: 0;
 }
 
-.cta-container p {
-  margin-bottom: 2rem;
+.cta-container:hover .cta-bg-image {
+  transform: scale(1.1);
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(45, 74, 62, 0.8) 0%, rgba(26, 35, 32, 0.9) 100%);
+  z-index: 1;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 2rem;
+  max-width: 800px;
+}
+
+.cta-subtitle {
+  display: block;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.cta-content h2 {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.cta-content p {
   font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.cta-decor {
+  position: absolute;
+  font-size: 2.5rem;
+  z-index: 2;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: float-cta 4s infinite alternate ease-in-out;
+}
+
+.decor-1 {
+  top: 15%;
+  left: 10%;
+  animation-delay: 0.5s;
+}
+
+.decor-2 {
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 1.5s;
+}
+
+@keyframes float-cta {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-20px) rotate(15deg); }
+}
+
+@media (max-width: 768px) {
+  .cta-content h2 {
+    font-size: 2.5rem;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Testimonials */
