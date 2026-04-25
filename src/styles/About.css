@@ -213,3 +213,40 @@
     left: 0;
   }
 }
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 6rem 5% 3rem;
+  }
+  .page-header h1 {
+    font-size: 3rem;
+  }
+  .story-visuals {
+    height: 400px;
+  }
+  .story-image-main {
+    width: 100%;
+    height: 100%;
+  }
+  .story-image-sub {
+    width: 60%;
+    height: 50%;
+    bottom: -10%;
+    left: 5%;
+  }
+  .philosophy-section {
+    padding: 4rem 0;
+  }
+  .philosophy-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+  .story-bg-text {
+    display: none;
+  }
+}

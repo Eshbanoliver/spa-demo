@@ -219,9 +219,58 @@ ul {
   padding: 4rem 5%;
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
+}
+
+/* Global Responsiveness */
+@media (max-width: 1200px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    font-size: 14px;
+  }
+  .page-container {
+    padding: 3.5rem 5%;
+  }
 }
 
 @media (max-width: 768px) {
-  .section-title { font-size: 2rem; }
-  .page-container { padding: 3rem 5%; }
+  .section-title { 
+    font-size: 2.2rem; 
+  }
+  .section-subtitle {
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+  }
+  .page-container { 
+    padding: 3rem 6%; 
+  }
+  
+  .btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title { 
+    font-size: 1.8rem; 
+  }
+  .page-container { 
+    padding: 2.5rem 20px; 
+  }
+}
+
+/* Utility for text center on mobile */
+@media (max-width: 768px) {
+  .text-center-mobile {
+    text-align: center !important;
+  }
+  .flex-center-mobile {
+    justify-content: center !important;
+  }
 }

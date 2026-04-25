@@ -50,8 +50,21 @@
   flex: 1;
 }
 
+@media (max-width: 992px) {
+  .services-grid-main {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .services-grid-main {
     grid-template-columns: 1fr;
+  }
+  .service-img-placeholder {
+    height: 200px;
+  }
+  .service-info {
+    padding: 1.5rem;
   }
 }
