@@ -378,17 +378,44 @@ const Home = () => {
       </section>
 
       {/* Testimonials Preview */}
-      <section className="testimonials-preview page-container">
-        <div className="section-header">
+      <section className="testimonials-preview">
+        <div className="section-header page-container">
           <span className="section-subtitle">Testimonials</span>
-          <h2 className="section-title">What Our Clients Say</h2>
+          <h2 className="section-title">Voices of Relaxation</h2>
         </div>
-        <div className="testi-card glass-panel">
-          <div className="stars">★★★★★</div>
-          <p>"The best spa experience I've ever had. The ambiance is incredibly soothing and the staff is highly professional. Highly recommended!"</p>
-          <h4>- Sarah Jenkins</h4>
+        
+        <div className="testimonials-marquee-wrapper">
+          <div className="testimonials-marquee">
+            {[...Array(2)].map((_, i) => (
+              <div className="marquee-group" key={i}>
+                {[
+                  { name: "Sarah Jenkins", role: "Yoga Instructor", text: "Unmatched serenity. The aromatherapy session was a game-changer for my stress levels.", stars: 5 },
+                  { name: "Michael Chen", role: "Athlete", text: "Professionalism at its peak. The deep tissue massage was exactly what I needed after my marathon.", stars: 5 },
+                  { name: "Elena Rodriguez", role: "Designer", text: "A hidden gem in Udaipur. The ambiance alone is worth the visit. Pure luxury.", stars: 5 },
+                  { name: "David Wilson", role: "Entrepreneur", text: "The facial treatment left my skin feeling incredible. Highly recommend the organic products.", stars: 5 },
+                  { name: "Priya Sharma", role: "Artist", text: "Pure bliss. The staff makes you feel like royalty from the moment you step in.", stars: 5 },
+                  { name: "James Miller", role: "Doctor", text: "Technically proficient and spiritually uplifting. Best holistic care in the city.", stars: 5 },
+                  { name: "Sophie Taylor", role: "Traveler", text: "The attention to detail is remarkable. Every scent and sound is curated for peace.", stars: 5 },
+                  { name: "Robert Brown", role: "Architect", text: "Consistent excellence. I've been a regular for years and it only gets better.", stars: 5 }
+                ].map((testi, idx) => (
+                  <div className="testi-card glass-panel" key={idx}>
+                    <div className="testi-stars">{"★".repeat(testi.stars)}</div>
+                    <p className="testi-text">"{testi.text}"</p>
+                    <div className="testi-author">
+                      <div className="author-avatar">{testi.name[0]}</div>
+                      <div className="author-info">
+                        <h4>{testi.name}</h4>
+                        <span>{testi.role}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="text-center" style={{ textAlign: 'center', marginTop: '2rem' }}>
+
+        <div className="text-center page-container" style={{ textAlign: 'center', marginTop: '4rem' }}>
           <Link to="/testimonials" className="btn btn-outline">Read More Reviews</Link>
         </div>
       </section>

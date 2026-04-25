@@ -890,23 +890,106 @@
 }
 
 /* Testimonials */
+.testimonials-preview {
+  padding: 6rem 0;
+  overflow: hidden;
+  background: linear-gradient(to bottom, transparent, rgba(214, 207, 196, 0.1), transparent);
+}
+
+.testimonials-marquee-wrapper {
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  margin-top: 3rem;
+}
+
+.testimonials-marquee {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scroll-marquee 40s linear infinite;
+}
+
+.testimonials-marquee:hover {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  gap: 2rem;
+}
+
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 1rem)); }
+}
+
 .testi-card {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 3rem;
-  text-align: center;
+  width: 400px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+  border-radius: 30px;
 }
 
-.stars {
+.testi-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(45, 74, 62, 0.1);
+}
+
+.testi-stars {
   color: var(--accent);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
 
-.testi-card p {
-  font-size: 1.2rem;
+.testi-text {
+  font-size: 1.1rem;
   font-style: italic;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 15px rgba(45, 74, 62, 0.2);
+}
+
+.author-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.author-info span {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .testi-card {
+    width: 320px;
+    padding: 2rem;
+  }
 }
 
 /* FAQ */
