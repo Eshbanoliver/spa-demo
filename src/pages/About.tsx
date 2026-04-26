@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { FiCheckCircle } from 'react-icons/fi';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { FiCheckCircle, FiFeather, FiActivity, FiLayers } from 'react-icons/fi';
 import '../styles/About.css';
 
 const About = () => {
@@ -131,35 +131,81 @@ const About = () => {
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="philosophy-section glass-panel">
-        <div className="philosophy-bg-decor">
-          <div className="decor-circle decor-1"></div>
-          <div className="decor-circle decor-2"></div>
+      {/* Philosophy Section */}
+      <section className="philosophy-section">
+        <div className="philosophy-background-wrap">
+          <div className="philosophy-blob blob-1"></div>
+          <div className="philosophy-blob blob-2"></div>
         </div>
-        <div className="page-container text-center">
-          <motion.span 
-            className="section-subtitle"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >Our Philosophy</motion.span>
-          <motion.h2 
-            className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >The Art of Balance</motion.h2>
-          <motion.p 
-            className="philosophy-text"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-          >
-            We view wellness as an ongoing journey rather than a destination. Our holistic approach integrates nature, science, and the healing touch to restore balance to your life. Every treatment is a step towards absolute harmony.
-          </motion.p>
+
+        <div className="page-container">
+          <div className="philosophy-header text-center">
+            <motion.span 
+              className="section-tag"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >Our Ethos</motion.span>
+            <motion.h2 
+              className="section-title"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >The Art of <span className="text-gradient">Total Balance</span></motion.h2>
+            <motion.p 
+              className="philosophy-intro lead-text"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              We view wellness as an ongoing journey rather than a destination. Our holistic approach integrates nature, science, and the healing touch to restore balance to your life.
+            </motion.p>
+          </div>
+
+          <div className="philosophy-pillars">
+            {[
+              {
+                icon: <FiFeather />,
+                title: "Nature First",
+                desc: "Using pure, organic botanical extracts harvested from sustainable sources.",
+                color: "rgba(72, 114, 98, 0.1)"
+              },
+              {
+                icon: <FiActivity />,
+                title: "Advanced Science",
+                desc: "Cutting-edge dermatological techniques combined with traditional wisdom.",
+                color: "rgba(196, 164, 130, 0.1)"
+              },
+              {
+                icon: <FiLayers />,
+                title: "Holistic Harmony",
+                desc: "A full-spectrum approach addressing the physical, mental, and spiritual self.",
+                color: "rgba(45, 74, 62, 0.1)"
+              }
+            ].map((pillar, index) => (
+              <motion.div 
+                key={index}
+                className="pillar-card glass-panel"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + index * 0.15 }}
+                whileHover={{ 
+                  y: -15, 
+                  backgroundColor: pillar.color,
+                  borderColor: 'var(--accent)'
+                }}
+              >
+                <div className="pillar-icon-wrap">
+                  {pillar.icon}
+                </div>
+                <h3>{pillar.title}</h3>
+                <p>{pillar.desc}</p>
+                <div className="pillar-line"></div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
