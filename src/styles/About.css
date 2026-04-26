@@ -400,9 +400,9 @@
 /* CTA Section */
 .about-cta {
   position: relative;
-  padding: 8rem 0;
+  padding: 4rem 0;
   overflow: hidden;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .cta-background {
@@ -430,12 +430,12 @@
   z-index: 1;
   max-width: 800px;
   margin: 0 auto;
-  padding: 5rem 3rem;
+  padding: 3rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .cta-content h2 {
@@ -468,10 +468,10 @@
 
 @media (max-width: 768px) {
   .about-cta {
-    padding: 6rem 0;
+    padding: 3rem 0;
   }
   .cta-content {
-    padding: 4rem 2rem;
+    padding: 2.5rem 1.5rem;
   }
   .cta-content h2 {
     font-size: 2.5rem;
