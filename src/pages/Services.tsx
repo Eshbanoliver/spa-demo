@@ -1,47 +1,62 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { FiClock, FiArrowRight, FiActivity, FiWind, FiZap, FiSun, FiDroplet, FiCloud, FiMoon } from 'react-icons/fi';
 import '../styles/Services.css';
 
 const servicesList = [
   {
     id: 1,
     title: 'Full Body Massage',
+    category: 'Therapy',
+    icon: <FiActivity />,
     desc: 'A therapeutic massage focusing on relieving muscle tension and promoting deep relaxation.',
     duration: '60 / 90 mins',
   },
   {
     id: 2,
     title: 'Aromatherapy',
+    category: 'Relaxation',
+    icon: <FiWind />,
     desc: 'Uses pure essential oils to enhance physical and emotional health, easing stress and anxiety.',
     duration: '60 mins',
   },
   {
     id: 3,
     title: 'Deep Tissue Massage',
+    category: 'Therapy',
+    icon: <FiZap />,
     desc: 'Targets deep layers of muscle tissue, ideal for chronic aches and pain.',
     duration: '90 mins',
   },
   {
     id: 4,
     title: 'Facial Treatments',
+    category: 'Skin Care',
+    icon: <FiSun />,
     desc: 'Customized facials to cleanse, exfoliate, and nourish your skin for a radiant glow.',
     duration: '45 / 60 mins',
   },
   {
     id: 5,
     title: 'Body Scrub & Polish',
+    category: 'Skin Care',
+    icon: <FiDroplet />,
     desc: 'Exfoliating treatment that removes dead skin cells and leaves your skin silky smooth.',
     duration: '45 mins',
   },
   {
     id: 6,
     title: 'Steam & Sauna Therapy',
+    category: 'Detox',
+    icon: <FiCloud />,
     desc: 'Detoxifying thermal therapy to cleanse pores and improve circulation.',
     duration: '30 mins',
   },
   {
     id: 7,
     title: 'Relaxation Therapy',
+    category: 'Relaxation',
+    icon: <FiMoon />,
     desc: 'A gentle approach designed solely to calm the nervous system and mind.',
     duration: '60 mins',
   }
@@ -107,17 +122,31 @@ const Services = () => {
             <motion.div 
               className="service-card-main glass-panel" 
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ y: -10 }}
             >
-              <div className="service-img-placeholder"></div>
+              <div className="service-card-image">
+                <div className="service-category-tag">{service.category}</div>
+                <div className="service-icon-overlay">{service.icon}</div>
+              </div>
+              
               <div className="service-info">
+                <div className="service-duration-wrap">
+                  <FiClock className="clock-icon" />
+                  <span>{service.duration}</span>
+                </div>
                 <h3>{service.title}</h3>
-                <p className="duration">{service.duration}</p>
                 <p className="desc">{service.desc}</p>
-                <Link to="/contact" className="btn btn-outline">Book This</Link>
+                
+                <Link to="/contact" className="service-link">
+                  <span>Explore Details</span>
+                  <FiArrowRight className="arrow-icon" />
+                </Link>
+                
+                <div className="card-accent-line"></div>
               </div>
             </motion.div>
           ))}
