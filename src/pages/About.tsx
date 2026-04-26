@@ -35,87 +35,98 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="section-subtitle">Our Journey</span>
-            <h2 className="section-title">Redefining Relaxation</h2>
-            <p>Founded with the vision to bring an oasis of calm into the bustling city, Spa. has grown into a premier destination for those seeking to rejuvenate their senses. We believe that self-care is not a luxury, but a necessity.</p>
+            <div className="section-tag">Since 2012</div>
+            <h2 className="section-title">A Journey of <span className="text-gradient">Pure Serenity</span></h2>
+            <p className="lead-text">Founded with the vision to bring an oasis of calm into the bustling city, Spa. has grown into a premier destination for those seeking to rejuvenate their senses.</p>
             <p>Our journey began over a decade ago in the serene landscapes of Rajasthan. Drawing inspiration from ancient wellness traditions, we've carefully curated experiences that harmonize the physical and mental well-being of our guests.</p>
             
-            <ul className="story-highlights mt-4">
+            <div className="journey-milestones">
               {[
-                "Award-winning holistic treatments",
-                "Highly trained international therapists",
-                "Exclusive organic products"
-              ].map((item, index) => (
-                <motion.li 
+                { year: "2012", title: "The Beginning", desc: "First sanctuary opened in Udaipur." },
+                { year: "2016", title: "Expansion", desc: "Opened 5 new locations nationwide." },
+                { year: "2024", title: "Global Recognition", desc: "Awarded Best Holistic Spa in Asia." }
+              ].map((milestone, index) => (
+                <motion.div 
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
+                  className="milestone-card glass-panel"
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + index * 0.1 }}
+                  whileHover={{ y: -5, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
                 >
-                  <FiCheckCircle className="check-icon" /> {item}
-                </motion.li>
+                  <span className="milestone-year">{milestone.year}</span>
+                  <div className="milestone-info">
+                    <h4>{milestone.title}</h4>
+                    <p>{milestone.desc}</p>
+                  </div>
+                </motion.div>
               ))}
-            </ul>
+            </div>
           </motion.div>
 
           <div className="story-visuals">
-            {/* Floating Graphics */}
+            <div className="visual-experience-blob"></div>
+            
             <motion.div 
-              className="story-petal petal-1"
-              animate={{ 
-                y: [0, -20, 0],
-                rotate: [0, 10, 0],
-                opacity: [0.4, 0.6, 0.4]
-              }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="visual-card card-main"
+              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, type: "spring" }}
             >
-              <svg viewBox="0 0 24 24" fill="var(--accent)" opacity="0.3">
-                <path d="M12,2C12,2 4,10 4,15C4,19.42 7.58,23 12,23C16.42,23 20,19.42 20,15C20,10 12,2 12,2Z" />
-              </svg>
-            </motion.div>
-            <motion.div 
-              className="story-petal petal-2"
-              animate={{ 
-                y: [0, 20, 0],
-                rotate: [0, -15, 0],
-                opacity: [0.3, 0.5, 0.3]
-              }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            >
-              <svg viewBox="0 0 24 24" fill="var(--primary-light)" opacity="0.2">
-                <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8.13,20C11.08,20 12.4,18.33 14.33,16.5C15.57,15.3 16.71,14.22 18.88,14C18.43,15.14 18.31,16.32 18.66,17.41L20.5,16.82C20.25,16.03 20.25,15.22 20.5,14.45C21.06,14.58 21.5,15.03 21.65,15.59L23.5,15C23.05,13.27 21.66,12.03 20,11.82C20,9.75 18.78,8.15 17,8M12.5,13C11.47,13 10.5,13.5 10.5,14.5C10.5,15.5 11.47,16 12.5,16C13.53,16 14.5,15.5 14.5,14.5C14.5,13.5 13.53,13 12.5,13Z" />
-              </svg>
+              <img src="/images/story_main_v2.png" alt="Main Story" />
+              <div className="card-overlay">
+                <span>The Essence of Zen</span>
+              </div>
             </motion.div>
 
             <motion.div 
-              className="story-image-main"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-            >
-              <img src="/images/story_main_v2.png" alt="Our Story" className="main-story-img" />
-            </motion.div>
-            <motion.div 
-              className="story-image-sub"
-              initial={{ opacity: 0, x: 20, y: 20 }}
+              className="visual-card card-sub-1"
+              initial={{ opacity: 0, x: 50, y: 50 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-            ></motion.div>
+              animate={{ y: [0, 15, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <img src="/images/story_detail.png" alt="Detail" />
+            </motion.div>
+
             <motion.div 
-              className="story-accent-shape"
-              animate={{ 
-                rotate: 360,
-                scale: [1, 1.1, 1]
-              }}
-              transition={{ 
-                duration: 20, 
-                repeat: Infinity,
-                ease: "linear" 
-              }}
-            ></motion.div>
+              className="visual-card card-sub-2 glass-panel"
+              initial={{ opacity: 0, x: -50, y: -50 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <div className="experience-stats">
+                <span className="stat-number">12+</span>
+                <span className="stat-label">Years of Excellence</span>
+              </div>
+            </motion.div>
+
+            {/* Floating Particles */}
+            {[...Array(5)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="floating-dot"
+                animate={{
+                  y: [0, -100, 0],
+                  x: [0, Math.random() * 50 - 25, 0],
+                  opacity: [0, 0.6, 0]
+                }}
+                transition={{
+                  duration: 5 + Math.random() * 5,
+                  repeat: Infinity,
+                  delay: i * 0.8
+                }}
+                style={{
+                  left: `${20 + i * 15}%`,
+                  top: `${70 - i * 10}%`
+                }}
+              />
+            ))}
           </div>
         </div>
       </section>
