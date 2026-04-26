@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiClock, FiArrowRight, FiActivity, FiWind, FiZap, FiSun, FiDroplet, FiCloud, FiMoon } from 'react-icons/fi';
+import CTASection from '../components/CTASection';
 import '../styles/Services.css';
 
 const servicesList = [
@@ -152,6 +153,8 @@ const Services = () => {
           ))}
         </div>
       </section>
+
+      <CTASection />
     </div>
   );
 };
