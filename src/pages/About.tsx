@@ -5,22 +5,55 @@ import '../styles/About.css';
 const About = () => {
   return (
     <div className="about-page">
-      {/* Page Header */}
-      <section className="page-header glass-panel">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.6 }}
-        >
-          About Spa.
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Discover our journey of creating a sanctuary for your mind and body.
-        </motion.p>
+      {/* Hero Section */}
+      <section className="about-hero">
+        <div className="hero-background">
+          <div className="hero-overlay"></div>
+          <img src="/images/about_hero.png" alt="Spa Background" className="hero-img" />
+        </div>
+        
+        <div className="hero-content">
+          <motion.div 
+            className="breadcrumb"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="breadcrumb-item">Home</span>
+            <span className="breadcrumb-sep">/</span>
+            <span className="breadcrumb-item active">About Us</span>
+          </motion.div>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            Crafting the Art of <br />
+            <span className="text-gradient">Timeless Wellness</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hero-subtitle"
+          >
+            Step into a world where tranquility meets tradition. Our sanctuary is dedicated to restoring your inner harmony through curated holistic experiences.
+          </motion.p>
+
+          <motion.div 
+            className="hero-scroll-indicator"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+          >
+            <div className="mouse">
+              <div className="wheel"></div>
+            </div>
+            <span>Scroll Discover</span>
+          </motion.div>
+        </div>
       </section>
 
       {/* Main Story */}
