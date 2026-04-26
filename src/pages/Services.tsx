@@ -50,21 +50,55 @@ const servicesList = [
 const Services = () => {
   return (
     <div className="services-page">
-      <section className="page-header glass-panel">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.6 }}
-        >
-          Our Services
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Indulge in our carefully curated selection of spa treatments.
-        </motion.p>
+      {/* Hero Section */}
+      <section className="page-hero">
+        <div className="hero-background">
+          <div className="hero-overlay"></div>
+          <img src="/images/services_hero.png" alt="Services Background" className="hero-img" />
+        </div>
+        
+        <div className="hero-content">
+          <motion.div 
+            className="breadcrumb"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="breadcrumb-item">Home</span>
+            <span className="breadcrumb-sep">/</span>
+            <span className="breadcrumb-item active">Our Services</span>
+          </motion.div>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+          >
+            A Sanctuary of <br />
+            <span className="text-gradient">Pure Rejuvenation</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hero-subtitle"
+          >
+            Experience the ultimate in physical and mental restoration with our signature treatments, designed to harmonize your senses.
+          </motion.p>
+
+          <motion.div 
+            className="hero-scroll-indicator"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+          >
+            <div className="mouse">
+              <div className="wheel"></div>
+            </div>
+            <span>Explore Treatments</span>
+          </motion.div>
+        </div>
       </section>
 
       <section className="services-list-section page-container">
