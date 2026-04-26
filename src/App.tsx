@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
 import BackgroundSpaDesigns from './components/BackgroundSpaDesigns';
+import ScrollToTop from './components/ScrollToTop';
 
 // Pages
 import Home from './pages/Home';
@@ -14,6 +15,7 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <div className="app-container">
+      <ScrollToTop />
       <BackgroundSpaDesigns />
       <div className="background-shapes">
         <div className="shape shape-1"></div>
