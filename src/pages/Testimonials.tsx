@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import CTASection from '../components/CTASection';
 import '../styles/Testimonials.css';
 
 const testimonials = [
@@ -43,21 +44,55 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <div className="testimonials-page">
-      <section className="page-header glass-panel">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.6 }}
-        >
-          Client Stories
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Read what our wonderful clients have to say about their experiences.
-        </motion.p>
+      {/* Hero Section */}
+      <section className="page-hero">
+        <div className="hero-background">
+          <div className="hero-overlay"></div>
+          <img src="/images/testimonials_hero.png" alt="Testimonials Background" className="hero-img" />
+        </div>
+        
+        <div className="hero-content">
+          <motion.div 
+            className="breadcrumb"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="breadcrumb-item">Home</span>
+            <span className="breadcrumb-sep">/</span>
+            <span className="breadcrumb-item active">Testimonials</span>
+          </motion.div>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+          >
+            Stories of <br />
+            <span className="text-gradient">Pure Bliss</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hero-subtitle"
+          >
+            Read what our wonderful clients have to say about their journey to tranquility and wellness at our sanctuary.
+          </motion.p>
+
+          <motion.div 
+            className="hero-scroll-indicator"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+          >
+            <div className="mouse">
+              <div className="wheel"></div>
+            </div>
+            <span>Discover Reviews</span>
+          </motion.div>
+        </div>
       </section>
 
       <section className="testimonials-grid-section page-container">
@@ -80,6 +115,8 @@ const Testimonials = () => {
           ))}
         </div>
       </section>
+
+      <CTASection />
     </div>
   );
 };
