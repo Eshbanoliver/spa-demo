@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiCheckCircle, FiHeart, FiStar, FiDroplet, FiAward, FiShield, FiZap, FiWind, FiUsers, FiLink, FiMoon } from 'react-icons/fi';
 import '../styles/Home.css';
+import CTASection from '../components/CTASection';
 
 const words = ["Soul", "Mind", "Body", "Aura"];
 
@@ -350,32 +351,13 @@ const Home = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="cta-section">
-        <div className="cta-container">
-          <div className="cta-bg-image" style={{ backgroundImage: "url('/images/cta_bg.png')" }}></div>
-          <div className="cta-overlay"></div>
-          <div className="cta-content">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="cta-subtitle">Limited Appointments Available</span>
-              <h2>Ready to Begin Your Journey?</h2>
-              <p>Book your session today and step into a world of ultimate relaxation and rejuvenation.</p>
-              <div className="cta-buttons">
-                <Link to="/contact" className="btn btn-primary">Book Now</Link>
-                <Link to="/services" className="btn btn-glass">Our Services</Link>
-              </div>
-            </motion.div>
-          </div>
-          
-          {/* Decorative elements */}
-          <div className="cta-decor decor-1">✨</div>
-          <div className="cta-decor decor-2">🌿</div>
-        </div>
-      </section>
+      <CTASection 
+        subtitle="Limited Appointments Available"
+        title="Ready to Begin Your Journey?"
+        description="Book your session today and step into a world of ultimate relaxation and rejuvenation."
+        primaryBtnText="Book Now"
+        secondaryBtnText="Our Services"
+      />
 
       {/* Testimonials Preview */}
       <section className="testimonials-preview">

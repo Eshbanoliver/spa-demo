@@ -244,7 +244,13 @@ const About = () => {
         </div>
       </section>
 
-      <CTASection />
+      <CTASection 
+        subtitle="Limited Appointments Available"
+        title="Ready to Begin Your Journey?"
+        description="Book your session today and step into a world of ultimate relaxation and rejuvenation."
+        primaryBtnText="Book Now"
+        secondaryBtnText="Our Services"
+      />
     </div>
   );
 };
