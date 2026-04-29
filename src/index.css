@@ -419,59 +419,62 @@ ul {
   margin-top: 2rem;
 }
 
-.cta-background {
+.common-cta-section .cta-background {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-.cta-background img {
+.common-cta-section .cta-background img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: brightness(0.6) blur(2px);
 }
 
-.cta-overlay {
+.common-cta-section .cta-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle, transparent 0%, var(--bg-color) 100%);
-  opacity: 0.8;
+  background: radial-gradient(circle, rgba(247, 245, 242, 0.4) 0%, var(--bg-color) 100%);
+  opacity: 0.85;
 }
 
-.cta-content {
+.common-cta-section .cta-content {
   position: relative;
   z-index: 1;
   max-width: 800px;
   margin: 0 auto;
-  padding: 2.5rem 3rem;
+  padding: 3.5rem 4rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.2rem;
   border-radius: 40px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-.cta-content h2 {
+.common-cta-section .cta-content h2 {
   font-size: 2.8rem;
   margin: 0;
   color: var(--primary);
 }
 
-.cta-content p {
+.common-cta-section .cta-content p {
   font-size: 1.2rem;
   color: var(--text-light);
   max-width: 600px;
   margin-bottom: 1.5rem;
 }
 
-.cta-actions {
+.common-cta-section .cta-actions {
   display: flex;
   gap: 1.5rem;
 }
 
-.cta-decor {
+.common-cta-section .cta-decor {
   position: absolute;
   top: -20px;
   right: -20px;
