@@ -5,21 +5,54 @@ import '../styles/Contact.css';
 const Contact = () => {
   return (
     <div className="contact-page">
-      <section className="page-header glass-panel">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.6 }}
-        >
-          Contact Us
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Get in touch to book your next session or ask any questions.
-        </motion.p>
+      <section className="page-hero">
+        <div className="hero-background">
+          <div className="hero-overlay"></div>
+          <img src="/images/contact_hero.png" alt="Contact Us" className="hero-img" />
+        </div>
+        
+        <div className="hero-content">
+          <motion.div 
+            className="breadcrumb"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="breadcrumb-item">Home</span>
+            <span className="breadcrumb-sep">/</span>
+            <span className="breadcrumb-item active">Contact Us</span>
+          </motion.div>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+          >
+            Get in Touch <br />
+            <span className="text-gradient">With Our Sanctuary</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hero-subtitle"
+          >
+            Have a question or ready to book your next session? Reach out and our team will be happy to assist you.
+          </motion.p>
+
+          <motion.div 
+            className="hero-scroll-indicator"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+          >
+            <div className="mouse">
+              <div className="wheel"></div>
+            </div>
+            <span>Send a Message</span>
+          </motion.div>
+        </div>
       </section>
 
       <section className="contact-content page-container">
