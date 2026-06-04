@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiCheckCircle, FiHeart, FiStar, FiDroplet, FiAward, FiShield, FiZap, FiWind, FiUsers, FiLink, FiMoon } from 'react-icons/fi';
+import { FiCheckCircle, FiHeart, FiStar, FiDroplet, FiAward, FiShield, FiZap, FiWind, FiUsers, FiMoon } from 'react-icons/fi';
 import '../styles/Home.css';
 import CTASection from '../components/CTASection';
 
@@ -325,9 +325,9 @@ const Home = () => {
             <h2 className="section-title">Why Choose Our Sanctuary?</h2>
             <div className="wcu-features">
               {[
-                { title: 'Expert Therapists', desc: 'Certified professionals with years of experience in holistic healing.', icon: '💆‍♀️' },
-                { title: 'Organic Products', desc: 'We use only the purest 100% organic and sustainable oils and creams.', icon: '🌿' },
-                { title: 'Luxury Ambiance', desc: 'Every room is designed to provide a deep sense of peace and privacy.', icon: '✨' },
+                { title: 'Expert Therapists', desc: 'Certified professionals with years of experience in holistic healing.', icon: <FiUsers /> },
+                { title: 'Organic Products', desc: 'We use only the purest 100% organic and sustainable oils and creams.', icon: <FiDroplet /> },
+                { title: 'Luxury Ambiance', desc: 'Every room is designed to provide a deep sense of peace and privacy.', icon: <FiStar /> },
                 { title: 'Tailored Care', desc: 'Treatments customized specifically for your physical and mental needs.', icon: <FiCheckCircle /> }
               ].map((feature, index) => (
                 <motion.div 
