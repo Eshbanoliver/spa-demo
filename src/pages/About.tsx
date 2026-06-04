@@ -122,10 +122,14 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              animate={{ y: [0, 15, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
-              <img src="/images/story_detail.png" alt="Detail" />
+              <motion.div
+                animate={{ y: [0, 15, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                style={{ width: '100%', height: '100%' }}
+              >
+                <img src="/images/story_detail.png" alt="Detail" />
+              </motion.div>
             </motion.div>
 
             <motion.div 
