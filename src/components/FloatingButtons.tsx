@@ -7,7 +7,7 @@ const FloatingButtons = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
+      if (window.scrollY > 300) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -28,10 +28,10 @@ const FloatingButtons = () => {
   return (
     <>
       <div className="floating-left">
-        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="float-btn whatsapp" aria-label="WhatsApp">
+        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="float-btn whatsapp" aria-label="WhatsApp">
           <FaWhatsapp />
         </a>
-        <a href="tel:" className="float-btn call" aria-label="Call Us">
+        <a href="tel:+919876543210" className="float-btn call" aria-label="Call Us">
           <FaPhone />
         </a>
       </div>
