@@ -80,7 +80,7 @@ const Contact = () => {
                 <div className="icon-wrapper"><FiPhone /></div>
                 <div>
                   <h4>Phone</h4>
-                  <p>[Phone Number]</p>
+                  <p>+91 98765 43210</p>
                 </div>
               </div>
               
@@ -88,7 +88,7 @@ const Contact = () => {
                 <div className="icon-wrapper"><FiMail /></div>
                 <div>
                   <h4>Email</h4>
-                  <p>[Email Address]</p>
+                  <p>contact@spawellness.com</p>
                 </div>
               </div>
             </div>
@@ -125,12 +125,15 @@ const Contact = () => {
 
       <section className="map-section page-container">
         <div className="map-container glass-panel">
-          {/* Placeholder for map iframe */}
-          <div className="map-placeholder">
-            <FiMapPin style={{ fontSize: '48px', color: 'var(--accent)' }} />
-            <p>Interactive Map Integration Here</p>
-            <span>Udaipur, Rajasthan 313001</span>
-          </div>
+          <iframe
+            src="https://maps.google.com/maps?q=Udaipur,%20Rajasthan%20313001&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0, borderRadius: '20px' }}
+            allowFullScreen={true}
+            loading="lazy"
+            title="Google Maps Location"
+          ></iframe>
         </div>
       </section>
     </div>

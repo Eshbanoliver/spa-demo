@@ -31,8 +31,8 @@ const Footer = () => {
           <h3>Contact Details</h3>
           <ul>
             <li><FiMapPin className="icon" /> <span>Udaipur, Rajasthan 313001</span></li>
-            <li><FiPhone className="icon" /> <span>[Phone Number]</span></li>
-            <li><FiMail className="icon" /> <span>[Email Address]</span></li>
+            <li><FiPhone className="icon" /> <span>+91 98765 43210</span></li>
+            <li><FiMail className="icon" /> <span>contact@spawellness.com</span></li>
           </ul>
         </div>
       </div>
